@@ -33,10 +33,15 @@ body{
 /* Fondo solo dentro */
 .card{
   position:relative;
-  overflow:visible;               /* ✅ NO recortar pase */
-  padding:16px 14px 140px;        /* ✅ hoja más corta */
+  overflow:visible;
+  padding:16px 14px 140px;
   text-align:center;
-  background:url("img/fondo.png") center / cover no-repeat;
+
+  /* FONDO HOJA 1 */
+  background-image:url("img/fondo1.png");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 
 /* Capa blanca suave para legibilidad */
