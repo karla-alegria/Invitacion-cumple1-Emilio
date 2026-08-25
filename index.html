@@ -34,6 +34,15 @@ body{
   background-repeat:no-repeat;
 }
 
+.phone::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,.50);
+  z-index:0;
+  pointer-events:none;
+}
+
 /* Fondo solo dentro */
 .card{
   position:relative;
@@ -45,16 +54,6 @@ body{
   background: transparent;
 }
 
-/* Capa blanca suave para legibilidad */
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.50);
-  z-index:0;
-}
-
-.card > *{position:relative; z-index:1;}
 
 /* ===== Elefante (más pequeño) ===== */
 .hero{
@@ -200,7 +199,7 @@ body{
     <section class="card" id="card">
       <!-- Elefante -->
       <div class="hero">
-        <img src="img/elefante-nombre.png" alt="Elefantito">
+        <img src="img/superemilio.png" alt="superEmilio
       </div>
 
 <audio id="bgMusic" preload="auto" loop>
