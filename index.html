@@ -21,43 +21,47 @@ body{
 }
 
 /* ✅ “Hoja” tamaño celular (más corta / compacta) */
+
 .phone{
   width:100%;
   max-width:390px;
+  min-height:calc(100vh - 24px);
+
   border-radius:24px;
   overflow:hidden;
   box-shadow:0 18px 60px rgba(2,20,40,.16);
 
-  background-image:url("img/fondo1.png");
+  /* Fondo + transparencia en TODA la hoja */
+  background-image: linear-gradient( rgba(255,255,255,.50),
+                                    rgba(255,255,255,.50)),
+    url("img/fondo1.png");
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
 }
 
-.phone::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.50);
-  z-index:0;
-  pointer-events:none;
-}
 
-/* Fondo solo dentro */
+/* CONTENEDOR DEL CONTENIDO */
 .card{
   position:relative;
   overflow:visible;
   padding:16px 14px 140px;
   text-align:center;
+  width:calc(100% - 36px);
+  min-height:calc(100vh - 36px);
+  margin:18px;
 
-  /* FONDO HOJA 1 */
-  background: transparent;
+  /* Ya no necesita fondo */
+  background:transparent;
+  border-radius:24px;
 }
 
+
+/* Mantén esto */
 .card > *{
-  position:relative; z-index:1;
+  position:relative;
+  z-index:1;
 }
-
 
 /* ===== Elefante (más pequeño) ===== */
 .hero{
