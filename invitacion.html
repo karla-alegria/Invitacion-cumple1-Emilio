@@ -56,16 +56,29 @@ html,body{ height:100%; }
 
 .card{
   position:relative;
-  overflow:visible;
-  padding:16px 14px 140px;
-  text-align:center;
-
-  /* FONDO HOJA 2 */
-  background-image:url("img/fondo2.png");
-  background-position:center;
-  background-size:cover;
-  background-repeat:no-repeat;
+  overflow:hidden;
+  /* QUITA el background-image de aquí */
 }
+
+/* Fondo semitransparente */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:url("img/fondo2.png") center / cover no-repeat;
+
+  opacity:0.5; /* 👈 transparencia del fondo */
+
+  z-index:0;
+}
+
+/* Contenido por encima del fondo */
+.card > *{
+  position:relative;
+  z-index:1;
+}
+
   
 /* Música */
     .musicWrap{ display:flex; justify-content:center; padding:6px 0 12px; }
