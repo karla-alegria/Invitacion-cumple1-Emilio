@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitación · Baby Shower</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+  body{
+  margin:0;
+  font-family:'Poppins',system-ui,sans-serif;
+  background:#eaf4fb;
+  min-height:100vh;
+}
+
+.wrap{
+      display:flex;
+      justify-content:center;
+      padding:12px 10px;
+    }
+
+.phone{
+  width:100%;
+  position: relative;
+  max-width:460px;
+  /*border-radius:22px;*/
+  overflow:hidden;
+  box-shadow:0 18px 60px rgba(2,20,40,.16);
+  background:#fff;
+}
+
+.page{
+  background:url("img/fondo.png") center / cover no-repeat;
+  position:relative;
+}
+.page::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(255,255,255,.55);
+      z-index:0;
+      pointer-events:none;
+    }
+
+.content{
+  position:relative;
+  z-index:1;
+  padding:18px 16px 28px;
+}
+
+  
+/* Música */
+    .musicWrap{ display:flex; justify-content:center; padding:6px 0 12px; }
+    .musicBtn{
+      width:64px; height:64px; border-radius:999px;
+      border:1px solid rgba(31,41,55,.12);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(6px);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      box-shadow: 0 10px 26px rgba(2,20,40,.10);
+      transition: transform .08s ease;
+    }
+    .musicBtn:active{ transform:scale(.98); }
+    .musicIcon{ width:26px; height:26px; display:block; }
+
+/* ======================
+   PORTADA
+====================== */
+.preTitle{
+  text-align:center;
+  font-family: Georgia, serif;
+  font-size:14px;
+  color:rgba(31,41,55,.75);
+  margin:2px 0 6px;
+}
+.heroTitle{
+  text-align:center;
+  font-family:"Brush Script MT",cursive;
+  font-size:34px;
+  color:#1f2937;
+  margin:6px 0 10px;
+}
+.imgBox{
+  width:60%;
+  max-width:300px;
+  margin:0 auto;
+}
+.imgBox img{ width:100%;display:block; }
+
+.parentsBlock{ text-align:center;margin:14px 0 22px; }
+.parentsPhoto{
+  display:inline-block;
+  background:#fff;
+  padding:6px;
+  border-radius:6px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  transform:rotate(-3deg);
+}
+.parentsPhoto img{ width:200px; }
+.parentsLabel{ font-size:13px;color:rgba(31,41,55,.65); padding-top:8px;}
+.parentsNames{
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:700;
+  margin:6px 0 14px;
+  border-bottom:2px solid rgba(31,41,55,.25);
+  display:inline-block;
+  padding-bottom:22px;
+}
+
+/* ===== FECHA LIMPIA (centrado real con GRID) ===== */
+.eventDateClean{
+  text-align:center;
+  margin: 18px 0 18px;
+  color:#1f2937;
+}
+
+/* ENERO arriba */
+.monthTop{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:6px;
+}
+
+/* ✅ CENTRADO REAL:
+   - 3 columnas: izquierda (SÁBADO), centro (24), derecha (2026)
+   - el centro SIEMPRE queda perfecto
+*/
+.dateLineGrid{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center; /* mantiene sábado y año centrados */
+  column-gap: 12px;
+  max-width: 320px;       /* controla “ancho” del bloque */
+  margin: 0 auto;         /* centra el grid completo */
+}
+
+/* izquierda */
+.dayName{
+  justify-self:end;       /* pega SABADO hacia el centro */
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  margin-top:10px
+}
+
+/* centro (24) */
+.dayNumber{
+  justify-self:center;
+  font-size:56px;
+  font-weight:900;
+  line-height:1;
+  margin-top: 6px;
+}
+
+/* derecha */
+.yearNumber{
+  justify-self:start;     /* pega 2026 hacia el centro */
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  margin-top:10px
+}
+
+/* Hora */
+.dateTime{
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.dayName,
+.yearNumber{
+  position:relative;
+  font-weight:800;
+  padding:8px 0;           /* espacio para las líneas */
+  line-height:1;
+}
+
+/* SÁBADO: línea arriba */
+.dayName::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:54px;
+  height:3px;
+  background:#1f2937;
+  transform:translateX(-50%);
+  border-radius:2px;
+}
+
+/* SÁBADO: línea abajo */
+.dayName::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:54px;
+  height:3px;
+  background:#1f2937;
+  transform:translateX(-50%);
+  border-radius:2px;
+}
+
+/* 2026: línea arriba */
+.yearNumber::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  width:54px;
+  height:3px;
+  background:#1f2937;
+  transform:translateX(-50%);
+  border-radius:2px;
+}
+
+/* 2026: línea abajo */
+.yearNumber::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:54px;
+  height:3px;
+  background:#1f2937;
+  transform:translateX(-50%);
+  border-radius:2px;
+}
+  
+/* ===== ANIMACIONES ===== */
+
+/* ENERO flotando */
+.floatMonth{
+  animation: floatY 2.6s ease-in-out infinite;
+}
+
+/* 24 “pop” al cargar */
+.popDay{
+  animation:
+    popIn .7s cubic-bezier(.2,1.6,.35,1) 1,
+    fadePulse 2.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes fadePulse{
+  0%{
+    opacity:1;
+    transform: scale(1);
+  }
+  40%{
+    opacity:0;
+    transform: scale(1);
+  }
+  60%{
+    opacity:0;
+    transform: scale(1);
+  }
+  100%{
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+ 
+/* keyframes */
+@keyframes floatY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
+
+@keyframes popIn{
+  0%{ transform: scale(.78); opacity: 0; }
+  60%{ transform: scale(1.08); opacity: 1; }
+  100%{ transform: scale(1); }
+}
+
+/* (Opcional) reduce animación si el usuario lo pide por accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .floatMonth, .popDay{ animation: none; }
+}
+
+ 
+  /* Contador */
+  .countdownCard{
+    margin:10px auto 0; max-width:320px;
+    padding:12px 12px 10px; border-radius:14px;
+    background: rgba(255,255,255,.70);
+    border:1px solid rgba(31,41,55,.10);
+    box-shadow:0 14px 40px rgba(2,20,40,.10);
+    text-align:center;
+  }
+  .countTitle{
+    font-size:12px; font-weight:800; letter-spacing:1.2px;
+    color: rgba(31,41,55,.72); text-transform:uppercase; margin-bottom:8px;
+  }
+  .countGrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .cBox{
+    border-radius:12px; padding:10px 6px;
+    background: rgba(165,210,245,.45);
+    border:1px solid rgba(31,41,55,.10);
+  }
+  .cNum{ font-size:20px; font-weight:900; letter-spacing:.5px; line-height:1; }
+  .cLab{ margin-top:6px; font-size:10px; font-weight:800; letter-spacing:1px; color: rgba(31,41,55,.70); text-transform:uppercase; }
+  .countNote{ margin-top:8px; font-size:12px; color: rgba(31,41,55,.65); }
+
+
+.pinIcon{
+  display:block;
+  width:34px;          /* tamaño del icono */
+  height:auto;
+  margin:0 auto 4px;   /* centrado + espacio abajo */
+  opacity:.9;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.18));
+}
+
+  
+/* ======================
+   BOX TIKTOK
+====================== */
+.boxElefante{
+  position:relative;
+  padding:18px 20px 22px;   /* ⬅️ menos alto */
+  border-radius:20px;
+  max-width:340px;
+  margin:24px auto;         /* ⬅️ menos aire arriba/abajo */
+  text-align:center;
+  color:#6B4A2B;
+
+  /* 🌟 Fondo más transparente */
+    background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.95) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(180,220,245,.55) 0%, transparent 55%),
+    linear-gradient(180deg,
+      rgba(255,255,255,.35),
+      rgba(190,225,245,.28)
+    );
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /*border:1px solid rgba(255,255,255,.55);*/
+  box-shadow:
+    0 18px 42px rgba(2,20,40,.20),
+    inset 0 1px 0 rgba(255,255,255,.75);
+
+  overflow:hidden;
+}
+
+
+  .boxElefante::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    linear-gradient(120deg,
+      rgba(255,255,255,.65),
+      rgba(255,255,255,0) 30%,
+      rgba(255,255,255,.45) 60%,
+      rgba(255,255,255,0)
+    );
+
+  opacity:.35;
+  animation: borderGlow 6s ease-in-out infinite;
+}
+
+@keyframes borderGlow{
+  0%,100% { opacity:.25; }
+  50%     { opacity:.45; }
+}
+
+
+
+.boxElefante .sparkles{
+  position:absolute;
+  inset:-20%;
+  pointer-events:none;
+
+  background:
+    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 2px) 0 0/50px 50px,
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px) 30px 20px/80px 80px,
+    radial-gradient(circle, rgba(255,255,255,.6) 2px, transparent 3px) 10px 60px/120px 120px;
+
+  opacity:.75;
+  animation: sparkleMove 14s linear infinite,
+             sparkleBlink 3.5s ease-in-out infinite;
+}
+
+@keyframes sparkleMove{
+  0%   { transform: translateY(0) translateX(0); }
+  50%  { transform: translateY(-30px) translateX(20px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes sparkleBlink{
+  0%,100% { opacity:.65; }
+  50%     { opacity:.95; }
+}
+
+
+.boxElefante > *{ position:relative; z-index:1; }
+.boxElefante p{
+  color:rgba(31,41,55,.7);
+  opacity: .9;
+}
+
+/* ======================
+   RECEPCIÓN
+====================== */
+.tituloUbicacion{
+  font-size:22px;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  margin:2px 0 6px;    /* ⬅️ compacto */
+  line-height:1.15;
+  color: #1f3a5f;/* ⬅️ clave */
+}
+.mapBox{
+  width:100%;
+  height:160px;
+  border-radius:18px;
+  overflow:hidden;
+  border:4px solid #9CCAD9;
+  background:#fff;
+  margin-bottom:16px;
+}
+.mapBox iframe{ width:100%;height:100%;border:none; }
+
+
+
+
+.confirmBtn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding:12px 18px;
+  border-radius:18px;
+  text-decoration:none;
+
+  background: rgba(165,210,245,.6);
+  border:1px solid rgba(31,41,55,.12);
+  color:#1f3a5f;
+
+  font-weight:800;
+  font-size:13px;
+
+  box-shadow:0 14px 30px rgba(2,20,40,.15);
+}
+
+.confirmBtn:active{
+  transform:scale(.98);
+}
+
+
+.confirmBox{
+  padding:20px 22px 22px;
+  border-radius:20px;
+  text-align:center;
+
+  /* 🌫️ Glass MUY transparente */
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.14),
+      rgba(220,240,250,.10)
+    );
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /*border:1px solid rgba(255,255,255,.25);*/
+
+  box-shadow:
+    0 10px 26px rgba(2,20,40,.10),
+    inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+
+  /* ícono Whatsapp */
+  .waIcon{
+  width:24px;
+  height:24px;
+  display:block;
+}
+
+  
+.confirmThanks{
+  margin: 26px auto 0;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: #6B4A2B;
+}
+
+.confirmThanks span{
+  display:block;
+  margin-top: 6px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: .3px;
+  color: rgba(31,41,55,.55);
+}
+
+
+
+
+
+.confirmText{
+  text-align:left;
+}
+
+.confirmTitle{
+  font-size:20px;
+  font-weight:900;
+  margin:0 0 6px;
+  color:#1f3a5f;
+}
+
+.confirmDesc{
+  font-size:13px;
+  line-height:1.35;
+  margin:0 0 12px;
+  color:rgba(31,41,55,.7);
+}
+  
+.confirmWrapper{
+  max-width: 460px;
+  margin: 50px auto 30px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* ======================
+   MOBILE SCROLL
+====================== */
+@media (max-width: 900px){
+    body{ overflow:hidden; }
+    .wrap{ height:100vh; align-items:center; }
+    .phone{ height:calc(100vh - 24px); }
+    .page{ height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    .wrap{ align-items:flex-start; }
+    .content{padding-top: 34px; /* antes 18px */  }
+    .musicWrap{ padding-top: 14px; }
+  .page::before{
+  display:none
+}
+  }
+/* 🐘 Elefante FUERA del box (solo confirmación) */
+.confirmElephantOutside{
+  width: 180px;
+  height: auto;
+  display: block;
+  flex: 0 0 auto;
+  pointer-events: none;
+  margin-left: -12px;
+}
+
+/* En móvil: el elefante se pone arriba y no estorba */
+@media (max-width: 420px){
+  .confirmWrapper{
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .confirmElephantOutside{
+    width: 150px;
+    margin-left: -12px;
+  }
+
+  .confirmBox{
+    padding: 14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+ <div class="wrap">
+    <div class="phone">
+      <main class="page">
+        <div class="content">
+
+<!-- MÚSICA -->
+<div class="musicWrap">
+  <button class="musicBtn" id="musicBtn">
+    <svg class="musicIcon" id="musicIcon" viewBox="0 0 24 24">
+      <path fill="#1f2937" d="M8 5v14l11-7z"/>
+    </svg>
+  </button>
+</div>
+
+<div class="preTitle">La dulce espera está por<br>terminar, te invito a:</div>
+<div class="heroTitle">Mi Baby Shower</div>
+
+<div class="imgBox">
+  <img src="img/elefante-nombre.png">
+</div>
+
+<div class="parentsBlock">
+  <div class="parentsPhoto">
+    <img src="img/padres.png">
+  </div>
+  <div class="parentsLabel">Mis Papis</div>
+  <div class="parentsNames">Karla & Arturo</div>
+</div>
+
+<div class="eventDateClean">
+  <div class="monthTop floatMonth">ENERO</div>
+
+  <div class="dateLineGrid">
+    <span class="dayName">SÁBADO</span>
+    <span class="dayNumber popDay">24</span>
+    <span class="yearNumber">2026</span>
+  </div>
+
+  <div class="dateTime">6:00 PM</div>
+</div>
+
+            <div class="countdownCard">
+              <div class="countTitle">¿CUÁNTO FALTA?</div>
+              <div class="countGrid" id="countdown">
+                <div class="cBox"><div class="cNum" id="cdDays">00</div><div class="cLab">DÍAS</div></div>
+                <div class="cBox"><div class="cNum" id="cdHours">00</div><div class="cLab">HORAS</div></div>
+                <div class="cBox"><div class="cNum" id="cdMins">00</div><div class="cLab">MIN</div></div>
+                <div class="cBox"><div class="cNum" id="cdSecs">00</div><div class="cLab">SEG</div></div>
+              </div>
+              <div class="countNote" id="cdNote"></div>
+            </div>
+          </div>
+  
+<!-- RECEPCIÓN -->
+<div class="boxElefante">
+  <div class="sparkles"></div>
+  <img src="img/pin.png" alt="Ubicación" class="pinIcon">
+  <h3 class="tituloUbicacion">Recepción</h3>
+  <p>Mz. G lote 19 Urb. Los Lirios<br>Lima, SMP</p>
+  <div class="mapBox">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.59863883633!2d-77.0934195!3d-12.002249999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf001f409cd3%3A0xb85be9330ee12223!2sCASA%20ALEGRIA!5e0!3m2!1ses!2spe!4v1766382857222!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
+  
+</div>
+
+<!-- CONFIRMACIÓN -->
+<section class="confirmWrapper">
+
+  <!-- Elefante FUERA del box -->
+  <img src="img/elefante.png" alt="Elefante" class="confirmElephantOutside">
+
+  <!-- Box transparente -->
+  <div class="confirmBox">
+    <h3 class="confirmTitle">Confirmación</h3>
+
+    <p class="confirmDesc">
+      Nos encantaría saber que nos acompañas.
+    </p>
+
+    <a class="confirmBtn"
+       href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo%20🤩🤩"
+       target="_blank">
+
+      <img src="img/whatsapp.png" class="waIcon">
+      Confirmar asistencia
+    </a>
+  </div>
+
+</section>
+
+
+<div class="confirmThanks">
+    Gracias<br>
+    <span>Por ser parte de este día especial<br><br><br><br><br><br></span>
+  </div>
+
+<audio id="bgMusic" preload="auto" loop>
+  <source src="img/musica.mp3" type="audio/mpeg">
+</audio>
+
+</main>
+</div>
+</div>
+
+<script>
+const btn = document.getElementById("musicBtn");
+const icon = document.getElementById("musicIcon");
+const audio = document.getElementById("bgMusic");
+let play = false;
+
+function setIcon(isPlaying){
+  if(isPlaying){
+    icon.innerHTML = '<path fill="#1f2937" d="M6 5h4v14H6zm8 0h4v14h-4z"/>';
+  }else{
+    icon.innerHTML = '<path fill="#1f2937" d="M8 5v14l11-7z"/>';
+  }
+}
+
+async function tryAutoPlayFromEnvelope(){
+  let shouldPlay = false;
+  try{
+    shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1";
+  }catch(e){}
+
+  if(!shouldPlay) return;
+
+  try{
+    await audio.play();
+    play = true;
+    setIcon(true);
+
+    // ✅ solo si funcionó, recién borramos la bandera
+    try{ sessionStorage.removeItem("playMusicOnNextPage"); }catch(e){}
+  }catch(err){
+    // ❗ si lo bloquea, NO borramos la bandera
+    // así el fallback del primer toque podrá arrancar la música
+    play = false;
+    setIcon(false);
+  }
+}
+
+
+btn.onclick = async () => {
+  if(!play){
+    try{
+      await audio.play();
+      play = true;
+      setIcon(true);
+    }catch(e){
+      // si falla, dejamos el icono en play
+      play = false;
+      setIcon(false);
+    }
+  }else{
+    audio.pause();
+    play = false;
+    setIcon(false);
+  }
+};
+
+// ✅ Autoplay al cargar (cuando el navegador lo permite)
+window.addEventListener("pageshow", () => {
+  tryAutoPlayFromEnvelope();
+});
+
+// ✅ Fallback: si el navegador bloquea autoplay, al primer toque en pantalla suena sí o sí
+document.addEventListener("pointerdown", async () => {
+  if (play) return;
+  let shouldPlay = false;
+  try { shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1"; } catch(e){}
+  if (!shouldPlay) return;
+
+  try {
+    await audio.play();
+    play = true;
+    setIcon(true);
+    try { sessionStorage.removeItem("playMusicOnNextPage"); } catch(e){}
+  } catch(e){}
+}, { once:true });
+
+
+  
+  /* Contador – 24/01/2026 6:00 PM (Perú -05:00) */
+  const EVENT_DATE = new Date("2026-01-24T18:00:00-05:00");
+
+  const elDays  = document.getElementById("cdDays");
+  const elHours = document.getElementById("cdHours");
+  const elMins  = document.getElementById("cdMins");
+  const elSecs  = document.getElementById("cdSecs");
+  const elNote  = document.getElementById("cdNote");
+
+  const pad2 = n => String(n).padStart(2,"0");
+
+  function tick(){
+    const now = new Date();
+    const diff = EVENT_DATE - now;
+
+    if(diff <= 0){
+      elDays.textContent = elHours.textContent = elMins.textContent = elSecs.textContent = "00";
+      elNote.textContent = "¡Hoy es el gran día! 💙";
+      return;
+    }
+    const totalSeconds = Math.floor(diff/1000);
+    const d = Math.floor(totalSeconds / (3600*24));
+    const h = Math.floor((totalSeconds % (3600*24)) / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+
+    elDays.textContent  = pad2(d);
+    elHours.textContent = pad2(h);
+    elMins.textContent  = pad2(m);
+    elSecs.textContent  = pad2(s);
+    elNote.textContent  = "";
+  }
+  tick();
+  setInterval(tick,1000);
+</script>
+
+
+</body>
+</html>
+
+
