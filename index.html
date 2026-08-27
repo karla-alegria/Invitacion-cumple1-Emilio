@@ -64,29 +64,35 @@ body{
   z-index:1;
 }
 
-/* ===== Mario con nombre (más pequeño) ===== */
+/* ===== MARIO DE ARRIBA ===== */
 .hero{
   display:flex;
   justify-content:center;
-  margin-top:0px;
+
+  /* lo sube */
+  margin-top:-15px;
+  margin-bottom:-8px;
 }
 
 .hero img{
-  width:180px;                    /* ✅ reducido */
+  width:180px;
   max-width:100%;
   display:block;
   margin:0 auto;
   filter:drop-shadow(0 14px 26px rgba(2,20,40,.16));
 }
 
-/* ===== Sobre (más pequeño) ===== */
+/* ===== SOBRE ===== */
 .envelopeWrap{
-  width:100%;
-  max-width:400px;                /* ✅ carta más pequeña */
-  margin:8px auto 0;
-  position:center;
+  width:115%;
+  max-width:440px;
+  /* lo mantiene centrado aunque sea más ancho */
+  margin:10px auto 0;
+  margin-left:50%;
+  transform:translateX(-50%);
+  position:relative;
   overflow:visible;
-  padding-bottom:120px;           /* ✅ espacio para pase grande */
+  padding-bottom:135px;
 }
 
 .envelopeImg{
@@ -94,6 +100,30 @@ body{
   aspect-ratio:16/10;
   position:relative;
   background:url("img/sobre.png") center / contain no-repeat;
+}
+
+
+/* ===== SELLO ESTRELLA ===== */
+.sealBtn{
+  position:absolute;
+  left:50%;
+  /* baja la estrella al sello plateado */
+  top:67%;
+  transform:translate(-50%,-50%);
+  width:56px;
+  height:56px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0;
+  z-index:100;
+}
+
+.sealBtn img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 5px rgba(0,0,0,.16));
 }
 
 /* Texto curvo (Georgia) */
@@ -113,28 +143,6 @@ body{
   letter-spacing:1px;
   fill:#1f2937;
   font-size:13px;
-}
-
-/* Sello (botón) */
-.sealBtn{
-  position:absolute;
-  left:50%;
-  top:60%;
-  transform:translate(-50%,-50%);
-  width:56px;                     /* ✅ un poco más pequeño */
-  height:56px;
-  background:none;
-  border:none;
-  cursor:pointer;
-  padding:0;
-  z-index:100;
-}
-
-.sealBtn img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  filter:drop-shadow(0 2px 5px rgba(0,0,0,.16));
 }
 
 /* ✅ Pase (más grande y sobresale) */
