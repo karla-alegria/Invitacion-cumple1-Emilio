@@ -6,7 +6,8 @@
 <title>Mi primer añito · Portada</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  
 <style>
 *{box-sizing:border-box;}
 html,body{height:100%;}
@@ -63,7 +64,7 @@ body{
   z-index:1;
 }
 
-/* ===== Elefante (más pequeño) ===== */
+/* ===== Mario con nombre (más pequeño) ===== */
 .hero{
   display:flex;
   justify-content:center;
@@ -78,7 +79,7 @@ body{
   filter:drop-shadow(0 14px 26px rgba(2,20,40,.16));
 }
 
-/* ===== Mi Baby Shower centrado ===== */
+/* ===== Mi Primer añito ===== */
 .subtitle{
   margin:4px auto 10px;           /* ✅ menos espacio */
   text-align:center;
@@ -92,7 +93,7 @@ body{
 /* ===== Sobre (más pequeño) ===== */
 .envelopeWrap{
   width:100%;
-  max-width:300px;                /* ✅ carta más pequeña */
+  max-width:360px;                /* ✅ carta más pequeña */
   margin:8px auto 0;
   position:relative;
   overflow:visible;
@@ -167,6 +168,82 @@ body{
   max-width:40%;                  /* 🔥 sobresale del sobre */
   height:auto;
   filter:none;
+}
+
+.titulo-mario{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1px;
+
+  margin:15px auto;
+  padding:10px;
+
+  font-family:'Luckiest Guy', cursive;
+  font-size:58px;
+  line-height:1;
+}
+
+.letra{
+  display:inline-block;
+
+  /* Borde de las letras */
+  -webkit-text-stroke:2px #1d1d1d;
+
+  /* Efecto 3D */
+  text-shadow:
+    0 3px 0 #ffffff,
+    0 5px 0 #222222,
+    2px 7px 4px rgba(0,0,0,.25);
+}
+
+/* COLORES */
+.rojo{
+  color:#e52521;
+}
+
+.azul{
+  color:#1687d9;
+}
+
+.amarillo{
+  color:#fbd000;
+}
+
+.verde{
+  color:#43b047;
+}
+
+/* Posición diferente para cada letra */
+.l1{
+  transform:rotate(-8deg) translateY(3px);
+}
+
+.l2{
+  transform:rotate(5deg) translateY(-4px) scale(1.08);
+}
+
+.l3{
+  transform:rotate(-4deg) translateY(2px);
+}
+
+.l4{
+  transform:rotate(7deg) translateY(-5px) scale(1.05);
+}
+
+.l5{
+  transform:rotate(-6deg) translateY(3px);
+}
+
+.l6{
+  transform:rotate(6deg) translateY(-2px) scale(1.08);
+}
+
+/* Para celulares pequeños 
+@media(max-width:360px){
+  .titulo-mario{
+    font-size:48px;
+  }*/
 }
 
 /* ===== Animación al tocar sello ===== */
