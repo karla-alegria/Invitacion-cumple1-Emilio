@@ -93,7 +93,7 @@ body{
 /* ===== Sobre (más pequeño) ===== */
 .envelopeWrap{
   width:100%;
-  max-width:360px;                /* ✅ carta más pequeña */
+  max-width:400px;                /* ✅ carta más pequeña */
   margin:8px auto 0;
   position:relative;
   overflow:visible;
@@ -101,7 +101,7 @@ body{
 }
 
 .envelopeImg{
-  width:100%;
+  width:110%;
   aspect-ratio:16/10;
   position:relative;
   background:url("img/sobre.png") center / contain no-repeat;
@@ -174,22 +174,19 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:1px;
-
-  margin:15px auto;
-  padding:10px;
+  gap:0;
 
   font-family:'Luckiest Guy', cursive;
-  font-size:58px;
+  font-size:30px;
   line-height:1;
+  margin:15px auto;
+  white-space:nowrap;
 }
-
+  
 .letra{
   display:inline-block;
-
   /* Borde de las letras */
   -webkit-text-stroke:2px #1d1d1d;
-
   /* Efecto 3D */
   text-shadow:
     0 3px 0 #ffffff,
@@ -198,46 +195,28 @@ body{
 }
 
 /* COLORES */
-.rojo{
-  color:#e52521;
-}
+.rojo{ color:#e52521;}
 
-.azul{
-  color:#1687d9;
-}
+.azul{ color:#1687d9;}
 
-.amarillo{
-  color:#fbd000;
-}
+.amarillo{color:#fbd000;}
 
-.verde{
-  color:#43b047;
-}
+.verde{ color:#43b047;}
 
+.espacio{width:14px;}
+  
 /* Posición diferente para cada letra */
-.l1{
-  transform:rotate(-8deg) translateY(3px);
-}
+.l1{ transform:rotate(-8deg) translateY(3px);}
 
-.l2{
-  transform:rotate(5deg) translateY(-4px) scale(1.08);
-}
+.l2{ transform:rotate(5deg) translateY(-4px) scale(1.08);}
 
-.l3{
-  transform:rotate(-4deg) translateY(2px);
-}
+.l3{transform:rotate(-4deg) translateY(2px);}
 
-.l4{
-  transform:rotate(7deg) translateY(-5px) scale(1.05);
-}
+.l4{ transform:rotate(7deg) translateY(-5px) scale(1.05);}
 
-.l5{
-  transform:rotate(-6deg) translateY(3px);
-}
+.l5{transform:rotate(-6deg) translateY(3px);}
 
-.l6{
-  transform:rotate(6deg) translateY(-2px) scale(1.08);
-}
+.l6{ transform:rotate(6deg) translateY(-2px) scale(1.08);}
 
 /* Para celulares pequeños 
 @media(max-width:360px){
@@ -294,7 +273,27 @@ body{
 
 
       <!-- Texto -->
-      <div class="subtitle">Mi Primer añito</div>
+      <h1 class="titulo-mario">
+  <span class="letra rojo l1">M</span>
+  <span class="letra azul l2">i</span>
+
+  <span class="espacio"></span>
+
+  <span class="letra amarillo l3">P</span>
+  <span class="letra verde l4">r</span>
+  <span class="letra rojo l5">i</span>
+  <span class="letra azul l6">m</span>
+  <span class="letra amarillo l1">e</span>
+  <span class="letra verde l2">r</span>
+
+  <span class="espacio"></span>
+
+  <span class="letra rojo l3">a</span>
+  <span class="letra azul l4">ñ</span>
+  <span class="letra amarillo l5">i</span>
+  <span class="letra verde l6">t</span>
+  <span class="letra rojo l1">o</span>
+      </h1>
 
       <!-- Sobre + Pase -->
       <div class="envelopeWrap">
