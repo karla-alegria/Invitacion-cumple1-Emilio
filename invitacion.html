@@ -37,7 +37,7 @@ html,body{ height:100%; }
 }
 
 .page{
-  background:url("img/fondo22.jpg") center / cover no-repeat;
+  background:url("img/fondo2.jpg") center / cover no-repeat;
   position:relative;
 }
 .page::before{
@@ -387,24 +387,10 @@ html,body{ height:100%; }
 }
 
 @keyframes fadePulse{
-  0%{
-    opacity:1;
-    transform: scale(1);
-  }
-  40%{
-    opacity:0;
-    transform: scale(1);
-  }
-  60%{
-    opacity:0;
-    transform: scale(1);
-  }
-  100%{
-    opacity:1;
-    transform: scale(1);
-  }
-}
-
+  0%{ opacity:1; transform: scale(1);  }
+  40%{   opacity:0;   transform: scale(1);  }
+  60%{   opacity:0;   transform: scale(1); }
+  100%{  opacity:1;   transform: scale(1);  }}
  
 /* keyframes */
 @keyframes floatY{
@@ -424,42 +410,101 @@ html,body{ height:100%; }
 }
 
  
-  /* Contador */
-  .countdownCard{
-    margin:10px auto 0; max-width:320px;
-    padding:12px 12px 10px; border-radius:14px;
-    background: rgba(255,255,255,.70);
-    border:1px solid rgba(31,41,55,.10);
-    box-shadow:0 14px 40px rgba(2,20,40,.10);
-    text-align:center;
-  }
-  .countTitle{
-    font-size:12px; font-weight:800; letter-spacing:1.2px;
-    color: rgba(31,41,55,.72); text-transform:uppercase; margin-bottom:8px;
-  }
-  .countGrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
-  .cBox{
-  border-radius:4px;
-  padding:12px 5px;
-  background:#f5a623;
-  border: 3px solid #8b4a00;
-  box-shadow:
-    inset 3px 3px 0 rgba(255,255,255,.45),
-    inset -3px -3px 0 rgba(0,0,0,.22),
-    3px 4px 0 rgba(0,0,0,.3);}
-  .cNum{
-  font-family:'Press Start 2P', monospace;
-  font-size:18px;
-  color:#fff;
-  text-shadow: 2px 2px 0 #000;}
+  
+/* ======================
+   CONTADOR MARIO
+====================== */
 
+.countdownCard{
+  position:relative;
+  max-width:350px;
+  margin:34px auto 28px;
+  padding:24px 12px 16px;
+  background:#5c94fc;
+  border:4px solid #222;
+  border-radius:4px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,.35);
+  text-align:center;
+}
+
+/* cartel superior */
+.countTitle{
+  position:absolute;
+  top:-17px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:7px 12px;
+  background:#e52521;
+  border:3px solid #8d160f;
+  color:#ffffff;
+  font-family:'Press Start 2P', monospace;
+  font-size:8px;
+  line-height:1.4;
+  white-space:nowrap;
+  text-shadow: 2px 2px 0 #000;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.3);
+}
+
+.countGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+}
+
+/* BLOQUES DEL CONTADOR */
+.cBox{
+  position:relative;
+  min-width:0;
+  padding:13px 3px 10px;
+  border-radius:2px;
+  background:#f5a623;
+  border:3px solid #8b4a00;
+  box-shadow:
+    inset 3px 3px 0 #ffd35a,
+    inset -3px -3px 0 #bd6500,
+    3px 4px 0 rgba(0,0,0,.3);
+}
+
+/* puntitos como los bloques del juego */
+.cBox::before,
+.cBox::after{
+  content:"";
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:#8b4a00;
+  border-radius:50%;
+  top:4px;
+}
+
+.cBox::before{left:4px;}
+.cBox::after{ right:4px;}
+
+/* número */
+.cNum{
+  font-family:'Press Start 2P', monospace;
+  font-size:16px;
+  color:#ffffff;
+  line-height:1;
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* días / horas / min / seg */
 .cLab{
-  margin-top:8px;
+  margin-top:9px;
+  font-family:'Press Start 2P', monospace;
+  font-size:6px;
+  color:#5b3000;
+  line-height:1.4;
+}
+
+.countNote{
+  margin-top:12px;
   font-family:'Press Start 2P', monospace;
   font-size:7px;
-  color:#5b3000;}
-  .countNote{ margin-top:8px; font-size:12px; color: rgba(31,41,55,.65); }
-
+  color:#ffffff;
+  text-shadow:  2px 2px 0 #000;
+}
 
 .pinIcon{
   display:block;
