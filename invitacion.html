@@ -97,7 +97,7 @@ html,body{ height:100%; }
   line-height:1.7;
   color:#ffffff;
   text-shadow: 2px 2px 0 #000;
-  margin:8px 0 15px;
+  margin:8px 0 14px;
 }
 
 .heroTitle{
@@ -111,7 +111,57 @@ html,body{ height:100%; }
   margin:12px auto 20px;
   max-width:420px;
 }
-  
+
+.marioBlocks{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  margin:4px auto 18px;
+}
+
+.brick{
+  width:38px;
+  height:38px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #b85b18 0 45%,
+      #8c3b0d 45% 52%,
+      #d47527 52% 100%
+    );
+
+  border:3px solid #6d2e08;
+
+  box-shadow:
+    inset 2px 2px 0 rgba(255,255,255,.25),
+    3px 3px 0 rgba(0,0,0,.25);
+}
+
+.questionBlock{
+  width:42px;
+  height:42px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Press Start 2P', monospace;
+  font-size:25px;
+  color:#ffffff;
+  background:#f2a900;
+  border:3px solid #a45a00;
+  text-shadow:  2px 2px 0 #7b4300;
+  box-shadow:
+    inset 3px 3px 0 #ffd75a,
+    inset -3px -3px 0 #c76b00,
+    3px 3px 0 rgba(0,0,0,.3);
+  animation:blockFloat 1.7s ease-in-out infinite;
+}
+
+@keyframes blockFloat{
+  0%,100%{    transform:translateY(0);}
+  50%{ transform:translateY(-6px); }
+}
 .imgBox{
   width:60%;
   max-width:300px;
@@ -647,8 +697,12 @@ html,body{ height:100%; }
 </div>
 
 <div class="preTitle"> ¡PREPÁRATE PARA UNA NUEVA AVENTURA!</div>
-
 <div class="heroTitle"> LUIS EMILIO<br> ESTÁ CUMPLIENDO </div>
+          <div class="marioBlocks">
+  <div class="brick"></div>
+  <div class="questionBlock">?</div>
+  <div class="brick"></div>
+</div>
 <div class="imgBox">
   <img src="img/elefante-nombre.png">
 </div>
