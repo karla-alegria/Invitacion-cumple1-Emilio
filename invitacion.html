@@ -162,12 +162,50 @@ html,body{ height:100%; }
   0%,100%{    transform:translateY(0);}
   50%{ transform:translateY(-6px); }
 }
-.imgBox{
-  width:60%;
-  max-width:300px;
-  margin:0 auto;
+.marioHero{
+  position:relative;
+  text-align:center;
+  margin:10px auto 26px;
+  min-height:230px;
 }
-.imgBox img{ width:100%;display:block; }
+
+.marioCharacter{
+  width:150px;
+  max-width:42%;
+  height:auto;
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-120%);
+  z-index:2;
+  animation:marioFloat 2.4s ease-in-out infinite;
+}
+
+.bigOne{
+  display:inline-block;
+  font-family:'Press Start 2P', monospace;
+  font-size:120px;
+  line-height:1;
+  color:#f5c400;
+  -webkit-text-stroke:4px #8b4500;
+  text-shadow:    5px 5px 0 #3b2100;
+  margin-top:15px;
+  position:relative;
+  z-index:1;
+}
+
+.firstYearText{
+  font-family:'Press Start 2P', monospace;
+  font-size:13px;
+  line-height:1.7;
+  color:#ffffff;
+  text-shadow: 3px 3px 0 #000;
+  margin-top:8px;
+}
+
+@keyframes marioFloat{
+  0%,100%{   transform:translateX(-120%) translateY(0); }
+  50%{ transform:translateX(-120%) translateY(-8px);  }}
 
 .parentsBlock{ text-align:center;margin:14px 0 22px; }
 .parentsPhoto{
@@ -703,8 +741,13 @@ html,body{ height:100%; }
   <div class="questionBlock">?</div>
   <div class="brick"></div>
 </div>
-<div class="imgBox">
-  <img src="img/elefante-nombre.png">
+<div class="marioHero">
+  <img src="img/mario.png" class="marioCharacter">
+  <div class="bigOne">1</div> 
+  <div class="firstYearText">
+    MI PRIMER AÑITO
+  </div>
+
 </div>
 
 <div class="parentsBlock">
