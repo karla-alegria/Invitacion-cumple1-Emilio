@@ -61,11 +61,8 @@ html,body{ height:100%; }
   content:"";
   position:absolute;
   inset:0;
-
   background:url("img/fondo2.png") center / cover no-repeat;
-
   opacity:0.5; /* 👈 transparencia del fondo */
-
   z-index:0;
 }
 
@@ -74,8 +71,7 @@ html,body{ height:100%; }
   position:relative;
   z-index:1;
 }
-
-  
+ 
 /* Música */
     .musicWrap{ display:flex; justify-content:center; padding:6px 0 12px; }
     .musicBtn{
@@ -331,12 +327,25 @@ html,body{ height:100%; }
   }
   .countGrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
   .cBox{
-    border-radius:12px; padding:10px 6px;
-    background: rgba(165,210,245,.45);
-    border:1px solid rgba(31,41,55,.10);
-  }
-  .cNum{ font-size:20px; font-weight:900; letter-spacing:.5px; line-height:1; }
-  .cLab{ margin-top:6px; font-size:10px; font-weight:800; letter-spacing:1px; color: rgba(31,41,55,.70); text-transform:uppercase; }
+  border-radius:4px;
+  padding:12px 5px;
+  background:#f5a623;
+  border: 3px solid #8b4a00;
+  box-shadow:
+    inset 3px 3px 0 rgba(255,255,255,.45),
+    inset -3px -3px 0 rgba(0,0,0,.22),
+    3px 4px 0 rgba(0,0,0,.3);}
+  .cNum{
+  font-family:'Press Start 2P', monospace;
+  font-size:18px;
+  color:#fff;
+  text-shadow: 2px 2px 0 #000;}
+
+.cLab{
+  margin-top:8px;
+  font-family:'Press Start 2P', monospace;
+  font-size:7px;
+  color:#5b3000;}
   .countNote{ margin-top:8px; font-size:12px; color: rgba(31,41,55,.65); }
 
 
