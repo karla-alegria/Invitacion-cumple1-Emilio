@@ -210,13 +210,95 @@ body{
   .envelopeWrap{ max-width:300px; }
   .paseWrap img{ width:390px; max-width:138%; }
 }
+
+/* ===== MONEDAS GIRANDO ===== */
+.moneda{
+  position:absolute;
+  z-index:3;
+  pointer-events:none;
+}
+
+.moneda img{
+  width:38px;
+  height:auto;
+  display:block;
+
+  animation:
+    girarMoneda 1.6s linear infinite,
+    flotarMoneda 2.4s ease-in-out infinite;
+}
+
+/* ===== POSICIÓN DE CADA MONEDA ===== */
+.moneda1{
+  top:70px;
+  left:18px;
+}
+
+.moneda2{
+  top:140px;
+  right:18px;
+}
+
+.moneda3{
+  top:390px;
+  left:12px;
+}
+
+.moneda4{
+  top:500px;
+  right:15px;
+}
+
+
+/* ===== DIFERENTES TIEMPOS ===== */
+.moneda1 img{  animation-delay:0s, 0s;}
+.moneda2 img{  animation-delay:.3s, .2s;}
+.moneda3 img{  animation-delay:.6s, .5s;}
+.moneda4 img{  animation-delay:.9s, .8s;}
+
+
+/* ===== EFECTO DE GIRO 3D ===== */
+
+@keyframes girarMoneda{
+  0%{ transform:scaleX(1);}
+  25%{  transform:scaleX(.12);}
+  50%{transform:scaleX(1);}
+  75%{ transform:scaleX(.12);  }
+  100%{ transform:scaleX(1);}
+}
+
+
+/* ===== SUBE Y BAJA SUAVEMENTE ===== */
+
+@keyframes flotarMoneda{
+  0%{translate:0 0; }
+  50%{translate:0 -10px;}
+  100%{ translate:0 0;}
+}
 </style>
 </head>
 
 <body>
   <div class="phone">
     <section class="card" id="card">
-      <!-- Elefante -->
+
+  <!-- ===== MONEDAS GIRANDO ===== -->
+  <div class="moneda moneda1">
+    <img src="img/moneda.png" alt="">
+  </div>
+
+  <div class="moneda moneda2">
+    <img src="img/moneda.png" alt="">
+  </div>
+
+  <div class="moneda moneda3">
+    <img src="img/moneda.png" alt="">
+  </div>
+
+  <div class="moneda moneda4">
+    <img src="img/moneda.png" alt="">
+  </div>
+      <!-- mario con nombre -->
       <div class="hero">
         <img src="img/superemilio.png" alt="superEmilio">
       </div>
