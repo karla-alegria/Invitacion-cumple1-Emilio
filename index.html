@@ -39,18 +39,12 @@ body{
 
 .card{
   position:relative;
-  /* IMPORTANTE: hidden, no visible */
   overflow:hidden;
   padding:16px 14px 140px;
   text-align:center;
   margin:0px;
   background:transparent;
   border-radius:24px;
-}
-
-/* NO queremos otra capa encima */
-.card::before{
-  display:none;
 }
 
 .card > *{
@@ -62,7 +56,6 @@ body{
 .hero{
   display:flex;
   justify-content:center;
-
   /* lo sube */
   margin-top:-26px;
   margin-bottom:14px;
@@ -79,7 +72,6 @@ body{
 /* ===== SOBRE ===== */
 .envelopeWrap{
   width:120%;
- /* max-width:440px;*/
   /* lo mantiene centrado aunque sea más ancho */
   margin:-12px auto 0;
   margin-left:50%;
@@ -100,8 +92,7 @@ body{
 .sealBtn{
   position:absolute;
   left:50%;
-  /* baja la estrella al sello plateado */
-  top:76%;
+  top:76%;   /* baja la estrella al sello plateado */
   transform:translate(-50%,-50%);
   width:58px;
   height:58px;
@@ -126,7 +117,6 @@ body{
   left:60%;
   transform: translate(-50%, -50%); /* centrado matemático */
   z-index:20;
-
   width: 100%;           /* mismo ancho que el pase */
   max-width: 160vw;       /* permite crecer en móvil */
   display:flex;
@@ -173,42 +163,22 @@ body{
   display:inline-block;
   /* Borde de las letras */
   -webkit-text-stroke:2px #1d1d1d;
-  /* Efecto 3D 
-  text-shadow:
-    0 3px 0 #ffffff,
-    0 5px 0 #222222,
-    2px 7px 4px rgba(0,0,0,.25);*/
 }
 
 /* COLORES */
 .rojo{ color:#e52521;}
-
 .azul{ color:#1687d9;}
-
 .amarillo{color:#fbd000;}
-
 .verde{ color:#43b047;}
-
 .espacio{width:14px;}
   
 /* Posición diferente para cada letra */
 .l1{ transform:rotate(-8deg) translateY(3px);}
-
 .l2{ transform:rotate(5deg) translateY(-4px) scale(1.08);}
-
 .l3{transform:rotate(-4deg) translateY(2px);}
-
 .l4{ transform:rotate(7deg) translateY(-5px) scale(1.05);}
-
 .l5{transform:rotate(-6deg) translateY(3px);}
-
 .l6{ transform:rotate(6deg) translateY(-2px) scale(1.08);}
-
-/* Para celulares pequeños 
-@media(max-width:360px){
-  .titulo-mario{
-    font-size:48px;
-  }*/
 }
 
 /* ===== Animación al tocar sello ===== */
@@ -238,7 +208,6 @@ body{
 /* Extra: pantallas muy pequeñas */
 @media (max-width:360px){
   .hero img{ width:220px; }
-  .subtitle{ font-size:23px; }
   .envelopeWrap{ max-width:300px; }
   .paseWrap img{ width:390px; max-width:138%; }
 }
