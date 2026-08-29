@@ -41,13 +41,8 @@ html,body{ height:100%; }
   position:relative;
 }
 .page::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: rgba(255,255,255,.55);
-      z-index:0;
-      pointer-events:none;
-    }
+  display:none;
+}
 
 .content{
   position:relative;
@@ -101,20 +96,24 @@ html,body{ height:100%; }
 ====================== */
 .preTitle{
   text-align:center;
-  font-family: Georgia, serif;
-  font-size:14px;
-  color:rgba(31,41,55,.75);
-  margin:2px 0 6px;
+  font-family:'Press Start 2P', monospace;
+  font-size:9px;
+  line-height:1.7;
+  color:#ffffff;
+  text-shadow: 2px 2px 0 #000;
+  margin:8px 0 15px;
 }
 
 .heroTitle{
   text-align:center;
-  font-family:'Press Start 2P', cursive;
+  font-family:'Press Start 2P', monospace;
   font-size:18px;
-  color:#1f2937;
-  line-height:1.6;
-  letter-spacing:1px;
-  margin:12px 0 18px;
+  line-height:1.65;
+  letter-spacing:0;
+  color:#ffffff;
+  text-shadow: 3px 3px 0 #000;
+  margin:12px auto 20px;
+  max-width:420px;
 }
   
 .imgBox{
@@ -638,9 +637,9 @@ html,body{ height:100%; }
   </button>
 </div>
 
-<div class="preTitle">Te invitamos a celebrar<br>este día tan especial</div>
-<div class="heroTitle">Luis Emilio está cumpliendo </div>
+<div class="preTitle"> ¡PREPÁRATE PARA UNA NUEVA AVENTURA!</div>
 
+<div class="heroTitle"> LUIS EMILIO<br> ESTÁ CUMPLIENDO </div>
 <div class="imgBox">
   <img src="img/elefante-nombre.png">
 </div>
