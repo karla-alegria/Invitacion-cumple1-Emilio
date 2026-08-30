@@ -11,6 +11,19 @@
   
 <style>
 *{ box-sizing:border-box; }
+:root{
+  --navy:#07152f;
+  --blue:#147df5;
+  --cyan:#00d9ff;
+  --red:#ef3340;
+  --yellow:#ffe04b;
+  --green:#39d353;
+  --white:#ffffff;
+  --black:#10131a;
+  --glass:rgba(8,25,55,.78);
+  --glass-light:rgba(255,255,255,.10);
+  --glow:0 0 18px rgba(0,217,255,.35);
+}
 html,body{ height:100%; }
 
   body{
@@ -36,14 +49,38 @@ html,body{ height:100%; }
 }
 
 .page{
-  background:url("img/fondo2.jpg") center / cover no-repeat;
   position:relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4,12,30,.15),
+      rgba(4,12,30,.45)
+    ),
+    url("img/fondo2.jpg") center / cover no-repeat;
+  color:#ffffff;
 }
-
+/* Brillo futurista sobre el fondo */
+.page::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(0,220,255,.20),
+      transparent 32% ),
+    radial-gradient(
+      circle at 80% 55%,
+      rgba(72,92,255,.18),
+      transparent 35%
+    );
+  z-index:0;
+}
 .content{
   position:relative;
   z-index:1;
-  padding:18px 16px 28px;
+  padding:24px 16px 36px;
 }
  
 /* Música */
