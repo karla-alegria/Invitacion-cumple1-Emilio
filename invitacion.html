@@ -429,13 +429,13 @@ html,body{ height:100%; }
 .cBox{
   position:relative;
   min-width:0;
-  padding:13px 3px 10px;
+  padding:15px 3px 12px;
   border-radius:2px;
-  background:#f5a623;
-  border:3px solid #8b4a00;
+  background:#FFD21C;
+  border:3px solid #B88600;
   box-shadow:
-    inset 3px 3px 0 #ffd35a,
-    inset -3px -3px 0 #bd6500,
+    inset 3px 3px 0 #fff49a,
+    inset -3px -3px 0 #d8a900,
     3px 4px 0 rgba(0,0,0,.3);
 }
 
@@ -444,11 +444,22 @@ html,body{ height:100%; }
 .cBox::after{
   content:"";
   position:absolute;
-  width:4px;
+  left:5px;
+  right:5px;
   height:4px;
-  background:#8b4a00;
-  border-radius:50%;
-  top:4px;
+  background:
+    radial-gradient(circle at left, #B88600 0 2px, transparent 2.5px),
+    radial-gradient(circle at right, #B88600 0 2px, transparent 2.5px);
+}
+
+/* dos puntos arriba */
+.cBox::before{
+  top:5px;
+}
+
+/* dos puntos abajo */
+.cBox::after{
+  bottom:5px;
 }
 
 .cBox::before{left:4px;}
@@ -457,19 +468,19 @@ html,body{ height:100%; }
 /* número */
 .cNum{
   font-family:'Press Start 2P', monospace;
-  font-size:16px;
-  color:#ffffff;
+  font-size:19px;
+  color:#1A1A1A;
   line-height:1;
-  text-shadow: 2px 2px 0 #000;
+  text-shadow:2px 2px 0 #ffffff;
 }
 
 /* días / horas / min / seg */
 .cLab{
-  margin-top:9px;
+  margin-top:10px;
   font-family:'Press Start 2P', monospace;
-  font-size:6px;
-  color:#5b3000;
-  line-height:1.4;
+  font-size:8px;
+  color:#1A1A1A;
+  line-height:1.5;
 }
 
 .countNote{
