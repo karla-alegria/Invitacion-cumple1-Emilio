@@ -52,7 +52,7 @@ html,body{ height:100%; }
 
 .card{
   position:relative;
-  overview:hidden;
+  overflow:hidden;
   /* QUITA el background-image de aquí */
 }
 
@@ -516,78 +516,7 @@ html,body{ height:100%; }
 }
 
   
-/* ======================
-   BOX TIKTOK
-====================== */
-.boxElefante{
-  position:relative;
-  padding:18px 20px 22px;   /* ⬅️ menos alto */
-  border-radius:20px;
-  max-width:340px;
-  margin:24px auto;         /* ⬅️ menos aire arriba/abajo */
-  text-align:center;
-  color:#6B4A2B;
-
-  /* 🌟 Fondo más transparente */
-    background:
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,.95) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(180,220,245,.55) 0%, transparent 55%),
-    linear-gradient(180deg,
-      rgba(255,255,255,.35),
-      rgba(190,225,245,.28)
-    );
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  /*border:1px solid rgba(255,255,255,.55);*/
-  box-shadow:
-    0 18px 42px rgba(2,20,40,.20),
-    inset 0 1px 0 rgba(255,255,255,.75);
-
-  overflow:hidden;
-}
-
-
-  .boxElefante::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  pointer-events:none;
-
-  background:
-    linear-gradient(120deg,
-      rgba(255,255,255,.65),
-      rgba(255,255,255,0) 30%,
-      rgba(255,255,255,.45) 60%,
-      rgba(255,255,255,0)
-    );
-
-  opacity:.35;
-  animation: borderGlow 6s ease-in-out infinite;
-}
-
-@keyframes borderGlow{
-  0%,100% { opacity:.25; }
-  50%     { opacity:.45; }
-}
-
-
-
-.boxElefante .sparkles{
-  position:absolute;
-  inset:-20%;
-  pointer-events:none;
-
-  background:
-    radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 2px) 0 0/50px 50px,
-    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 2px) 30px 20px/80px 80px,
-    radial-gradient(circle, rgba(255,255,255,.6) 2px, transparent 3px) 10px 60px/120px 120px;
-
-  opacity:.75;
-  animation: sparkleMove 14s linear infinite,
-             sparkleBlink 3.5s ease-in-out infinite;
-}
+/
 
 @keyframes sparkleMove{
   0%   { transform: translateY(0) translateX(0); }
@@ -597,11 +526,7 @@ html,body{ height:100%; }
 
 @keyframes sparkleBlink{
   0%,100% { opacity:.65; }
-  50%     { opacity:.95; }
-}
-
-
-.boxElefante > *{ position:relative; z-index:1; }
+  50%     { opacity:.65;}
 .boxElefante p{
   color:rgba(31,41,55,.7);
   opacity: .9;
@@ -708,10 +633,6 @@ html,body{ height:100%; }
   letter-spacing: .3px;
   color: rgba(31,41,55,.55);
 }
-
-
-
-
 
 .confirmText{
   text-align:left;
@@ -851,15 +772,36 @@ html,body{ height:100%; }
             </div>
           </div>
   
-<!-- RECEPCIÓN -->
-<div class="boxElefante">
-  <div class="sparkles"></div>
-  <img src="img/gps.jpg" alt="Ubicación" class="pinIcon">
-  <h3 class="tituloUbicacion">Recepción</h3>
-  <p>Mz. G lote 19 Urb. Los Lirios<br>Lima, SMP</p>
-  <div class="mapBox">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.59863883633!2d-77.0934195!3d-12.002249999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf001f409cd3%3A0xb85be9330ee12223!2sCASA%20ALEGRIA!5e0!3m2!1ses!2spe!4v1766382857222!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- RECEPCIÓN MARIO -->
+<section class="marioLocation">
+  <div class="locationTop">
+    <div class="locationWorld">SIGUIENTE NIVEL</div>
+    <div class="locationTitle">RECEPCIÓN</div>
   </div>
+
+  <div class="locationAddress">
+    <span class="locationPin">📍</span>
+
+    <span>
+      Mz. G lote 19 Urb. Los Lirios<br>
+      Lima, SMP
+    </span>
+  </div>
+
+  <div class="mapBox">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.59863883633!2d-77.0934195!3d-12.002249999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf001f409cd3%3A0xb85be9330ee12223!2sCASA%20ALEGRIA!5e0!3m2!1ses!2spe!4v1766382857222!5m2!1ses!2spe"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="marioPipe">
+    <div class="pipeTop"></div>
+    <div class="pipeBody"></div>
+  </div>
+
+</section>
   
   
 </div>
