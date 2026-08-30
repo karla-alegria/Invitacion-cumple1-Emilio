@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -187,22 +188,29 @@ html,body{ height:100%; }
 }
 
 
-/* moneda izquierda */
+/* moneda izquierda arriba*/
 .coin1{
-  left:30%;
+  left:2%;
   top:8px;
 }
 
-/* moneda arriba derecha */
+/* moneda izquierda abajo*/
 .coin2{
-  right:12%;
+  left:30%;
+  top:120px;
+  animation-delay:.3s;
+}
+
+/* moneda arriba derecha */
+.coin3{
+  right:16%;
   top:5px;
   animation-delay:.3s;
 }
 
 /* moneda derecha abajo */
-.coin3{
-  right:7%;
+.coin4{
+  right:2%;
   top:110px;
   animation-delay:.6s;
 }
@@ -829,6 +837,7 @@ html,body{ height:100%; }
   <div class="coin coin1">$</div>
   <div class="coin coin2">$</div>
   <div class="coin coin3">$</div>
+  <div class="coin coin4">$</div>
   <img src="img/Bigone.png" class="bigOne" alt="1">
   <div class="firstYearText">
     MI PRIMER AÑITO
