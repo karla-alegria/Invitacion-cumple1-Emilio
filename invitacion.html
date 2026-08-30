@@ -244,9 +244,8 @@ html,body{ height:100%; }
 
 /* derecha */
 .yearNumber{
-  justify-self:start;     /* pega 2026 hacia el centro */
+  justify-self:start;     /* pega 2027 hacia el centro */
   font-size:14px;
-  font-weight:900;
   letter-spacing:1.2px;
   margin-top:10px
 }
@@ -271,54 +270,26 @@ html,body{ height:100%; }
 
 /* SÁBADO: línea arriba */
 .dayName::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:54px;
-  height:3px;
-  background:#1f2937;
-  transform:translateX(-50%);
-  border-radius:2px;
-}
-
-/* SÁBADO: línea abajo */
-.dayName::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:54px;
-  height:3px;
-  background:#1f2937;
-  transform:translateX(-50%);
-  border-radius:2px;
-}
-
-/* 2026: línea arriba */
-.yearNumber::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:54px;
-  height:3px;
-  background:#1f2937;
-  transform:translateX(-50%);
-  border-radius:2px;
-}
-
-/* 2026: línea abajo */
+.dayName::before,
+.dayName::after,
+.yearNumber::before,
 .yearNumber::after{
   content:"";
   position:absolute;
   left:50%;
-  bottom:0;
   width:54px;
   height:3px;
   background:#1f2937;
   transform:translateX(-50%);
   border-radius:2px;
+}
+.dayName::before,
+.yearNumber::before{
+  top:0;
+}
+.dayName::after,
+.yearNumber::after{
+  bottom:0;
 }
   
 /* ===== ANIMACIONES ===== */
