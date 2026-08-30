@@ -80,7 +80,6 @@ html,body{ height:100%; }
   line-height:1.65;
   letter-spacing:0;
   color:#000000;
-  text-shadow: 3px 3px 0 #000;
   margin:12px auto 20px;
   max-width:420px;
 }
@@ -157,10 +156,18 @@ html,body{ height:100%; }
   font-family:'Press Start 2P', monospace;
   font-size:120px;
   line-height:1;
-  color:#f5c400;
-  -webkit-text-stroke:4px #8b4500;
-  text-shadow:    5px 5px 0 #3b2100;
+
+  /* verde */
+  color:#39b934
+  /* borde negro */
+  -webkit-text-stroke:5px #111111;
+  /* sombra negra hacia abajo */
+  text-shadow:
+    0 5px 0 #111111,
+    0 9px 0 #111111;
   margin-top:15px;
+  /* mover un poco hacia la derecha */
+  transform:translateX(18px);
   position:relative;
   z-index:1;
 }
