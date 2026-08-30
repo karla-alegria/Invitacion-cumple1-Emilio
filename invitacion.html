@@ -154,20 +154,21 @@ html,body{ height:100%; }
 .bigOne{
   display:inline-block;
   font-family:'Press Start 2P', monospace;
-  font-size:120px;
+  font-size:136px;
   line-height:1;
-
-  /* verde */
-  color:#39b934
-  /* borde negro */
-  -webkit-text-stroke:5px #111111;
-  /* sombra negra hacia abajo */
+  /* relleno verde */
+  color:#39b934;
+  /* borde negro más delgado */
+  -webkit-text-stroke:2px #111;
+  /* efecto de profundidad hacia abajo */
   text-shadow:
-    0 5px 0 #111111,
-    0 9px 0 #111111;
+    2px 2px 0 #111,
+    3px 3px 0 #111,
+    4px 4px 0 #111,
+    5px 5px 0 #111;
   margin-top:15px;
-  /* mover un poco hacia la derecha */
-  transform:translateX(18px);
+  /* un poco hacia la derecha */
+  transform:translateX(20px);
   position:relative;
   z-index:1;
 }
