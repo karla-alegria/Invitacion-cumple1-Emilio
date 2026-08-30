@@ -685,14 +685,11 @@ html,body{ height:100%; }
 
 .marioConfirm{
   position:relative;
-
   max-width:360px;
   margin:50px auto 30px;
-
   display:flex;
   justify-content:center;
   align-items:flex-end;
-
   gap:8px;
 }
 
@@ -700,7 +697,6 @@ html,body{ height:100%; }
 .confirmCharacter{
   width:105px;
   flex-shrink:0;
-
   position:relative;
   z-index:2;
 }
@@ -709,36 +705,24 @@ html,body{ height:100%; }
   width:100%;
   height:auto;
   display:block;
-
   animation:confirmMarioFloat 2s ease-in-out infinite;
 }
 
 @keyframes confirmMarioFloat{
-  0%,100%{
-    transform:translateY(0);
-  }
+  0%,100%{    transform:translateY(0);  }
 
-  50%{
-    transform:translateY(-7px);
-  }
+  50%{   transform:translateY(-7px);  }
 }
 
 
 /* caja */
 .confirmBoxMario{
   position:relative;
-
   flex:1;
-
   padding:30px 14px 18px;
-
   background:#ffffff;
-
   border:4px solid #222;
-
-  box-shadow:
-    6px 6px 0 rgba(0,0,0,.35);
-
+  box-shadow:  6px 6px 0 rgba(0,0,0,.35);
   text-align:center;
 }
 
@@ -746,58 +730,37 @@ html,body{ height:100%; }
 /* cartel superior */
 .confirmLevel{
   position:absolute;
-
   top:-17px;
   left:50%;
-
   transform:translateX(-50%);
-
   background:#e52521;
-
   border:3px solid #8d160f;
-
   padding:7px 10px;
-
   font-family:'Press Start 2P', monospace;
-
   font-size:7px;
-
   color:#ffffff;
-
   white-space:nowrap;
-
-  text-shadow:
-    2px 2px 0 #000;
+  text-shadow:  2px 2px 0 #000;
 }
 
 
 /* título */
 .confirmTitleMario{
   font-family:'Press Start 2P', monospace;
-
   font-size:10px;
-
   line-height:1.7;
-
   color:#e52521;
-
   margin:0 0 12px;
-
-  text-shadow:
-    2px 2px 0 #ffd21c;
+  text-shadow:  2px 2px 0 #ffd21c;
 }
 
 
 /* descripción */
 .confirmDescMario{
   font-family:'Press Start 2P', monospace;
-
   font-size:6px;
-
   line-height:1.8;
-
   color:#333;
-
   margin:0 0 15px;
 }
 
@@ -805,31 +768,20 @@ html,body{ height:100%; }
 /* botón */
 .confirmBtnMario{
   display:flex;
-
   justify-content:center;
   align-items:center;
-
   gap:8px;
-
   padding:11px 10px;
-
   text-decoration:none;
-
   background:#32b43c;
-
   border:4px solid #0b5f17;
-
   color:#ffffff;
-
   font-family:'Press Start 2P', monospace;
-
   font-size:7px;
-
   box-shadow:
     inset 4px 4px 0 rgba(255,255,255,.25),
     inset -4px -4px 0 rgba(0,0,0,.18),
     4px 4px 0 rgba(0,0,0,.3);
-
   transition:
     transform .1s ease,
     box-shadow .1s ease;
@@ -837,13 +789,11 @@ html,body{ height:100%; }
 
 .confirmBtnMario:active{
   transform:translateY(3px);
-
   box-shadow:
     inset 4px 4px 0 rgba(255,255,255,.25),
     inset -4px -4px 0 rgba(0,0,0,.18),
     1px 1px 0 rgba(0,0,0,.3);
 }
-
 
 /* WhatsApp */
 .waIconMario{
@@ -853,7 +803,78 @@ html,body{ height:100%; }
   border-radius:4px;
 }
 
+/* ======================
+   FINAL MARIO
+====================== */
+.marioEnding{
+  position:relative;
+  max-width:350px;
+  margin:55px auto 30px;
+  padding:28px 15px 45px;
+  text-align:center;
+  background:#111;
+  border:4px solid #fff;
+  box-shadow:   6px 6px 0 rgba(0,0,0,.4);
+}
 
+
+/* LEVEL COMPLETE */
+.endingComplete{
+  font-family:'Press Start 2P', monospace;
+  font-size:8px;
+  line-height:1.6;
+  color:#ffffff;
+  margin-bottom:18px;
+}
+
+
+/* GRACIAS */
+.endingThanks{
+  font-family:'Press Start 2P', monospace;
+  font-size:22px;
+  color:#ffd21c;
+  text-shadow: 3px 3px 0 #e52521;
+  margin-bottom:18px;
+ animation:endingPop 2s ease-in-out infinite;
+}
+
+
+/* texto */
+.endingText{
+  font-family:'Press Start 2P', monospace;
+  font-size:8px;
+  line-height:2;
+  color:#ffffff;
+}
+
+
+/* estrellas */
+.endingStars{
+  margin:18px 0 14px;
+  font-size:27px;
+  letter-spacing:8px;
+  color:#ffd21c;
+  text-shadow:  2px 2px 0 #a75c00;
+}
+
+
+/* nombre */
+.endingName{
+  display:inline-block;
+  padding:9px 12px;
+  background:#e52521;
+  border:3px solid #8d160f;
+  font-family:'Press Start 2P', monospace;
+  font-size:9px;
+  color:#ffffff;
+  text-shadow: 2px 2px 0 #000;
+  box-shadow:    3px 3px 0 rgba(0,0,0,.4);
+}
+
+@keyframes endingPop{
+  0%,100%{    transform:scale(1);  }
+  50%{  transform:scale(1.06);  }
+}
 
 .confirmText{
   text-align:left;
