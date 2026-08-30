@@ -172,6 +172,59 @@ html,body{ height:100%; }
   position:relative;
   z-index:1;
 }
+  
+  /* ======================
+   MONEDAS MARIO
+====================== */
+.coin{
+  position:absolute;
+  z-index:3;
+  width:28px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#ffd21c;
+  border:3px solid #a85b00;
+  border-radius:50%;
+  font-family:'Press Start 2P', monospace;
+  font-size:13px;
+  color:#ffffff;
+  text-shadow:2px 2px 0 #a85b00;
+  box-shadow:
+    inset 3px 0 0 #fff27a,
+    inset -3px 0 0 #e89500;
+  animation:coinSpin 1.2s linear infinite;
+}
+
+
+/* moneda izquierda */
+.coin1{
+  left:12%;
+  top:15px;
+}
+
+/* moneda arriba derecha */
+.coin2{
+  right:12%;
+  top:5px;
+  animation-delay:.3s;
+}
+
+/* moneda derecha abajo */
+.coin3{
+  right:7%;
+  top:110px;
+  animation-delay:.6s;
+}
+
+@keyframes coinSpin{
+  0%{   transform:scaleX(1); }
+  25%{   transform:scaleX(.25); }
+  50%{    transform:scaleX(1);  }
+  75%{    transform:scaleX(.25);  }
+  100%{   transform:scaleX(1);}
+}
 
 .firstYearText{
   font-family:'Press Start 2P', monospace;
@@ -783,11 +836,14 @@ html,body{ height:100%; }
 </div>
 <div class="marioHero">
   <img src="img/mario.png" class="marioCharacter">
-  <div class="bigOne">1</div> 
+  <!-- MONEDAS -->
+  <div class="coin coin1">$</div>
+  <div class="coin coin2">$</div>
+  <div class="coin coin3">$</div>
+  <div class="bigOne">1</div>
   <div class="firstYearText">
     MI PRIMER AÑITO
   </div>
-
 </div>
 
 <div class="eventDateClean">
