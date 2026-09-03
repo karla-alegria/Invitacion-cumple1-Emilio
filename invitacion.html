@@ -439,6 +439,20 @@ html,body{ height:100%; }
 @media (prefers-reduced-motion: reduce){
   .floatMonth, .popDay{ animation: none; }
 } 
+
+.betweenImage{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin:12px auto 25px;
+}
+
+.betweenImage img{
+  width:75px;
+  height:auto;
+  display:block;
+}
   
 /* ======================
    CONTADOR MARIO
@@ -922,7 +936,11 @@ html,body{ height:100%; }
 
   <div class="dateTime">5:00 PM</div>
 </div>
-
+          
+<!-- IMAGEN ENTRE FECHA Y CONTADOR -->
+<div class="betweenImage">
+  <img src="img/medio.png" alt="">
+</div>
             <div class="countdownCard">
               <div class="countTitle">¿CUÁNTO FALTA?</div>
               <div class="countGrid" id="countdown">
