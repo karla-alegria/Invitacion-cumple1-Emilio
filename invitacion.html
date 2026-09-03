@@ -257,12 +257,20 @@ html,body{ height:100%; }
   animation-delay:.6s;
 }
 
-@keyframes coinSpin{
-  0%{   transform:scaleX(1); }
-  25%{   transform:scaleX(.25); }
-  50%{    transform:scaleX(1);  }
-  75%{    transform:scaleX(.25);  }
-  100%{   transform:scaleX(1);}
+/* ===== EFECTO DE GIRO 3D ===== */
+@keyframes girarMoneda{
+  0%{ transform:scaleX(1);}
+  25%{  transform:scaleX(.12);}
+  50%{transform:scaleX(1);}
+  75%{ transform:scaleX(.12);  }
+  100%{ transform:scaleX(1);}
+}
+
+/* ===== SUBE Y BAJA SUAVEMENTE ===== */
+@keyframes flotarMoneda{
+  0%{translate:0 0; }
+  50%{translate:0 -10px;}
+  100%{ translate:0 0;}
 }
 
 .firstYearText{
